@@ -28,7 +28,7 @@ find_package(catkin REQUIRED COMPONENTS
 ################################################################################
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES dynamixel_workbench_single_manager
+  LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS roscpp dynamixel_workbench_msgs dynamixel_workbench_toolbox
 )
 
@@ -51,13 +51,7 @@ target_link_libraries(single_dynamixel_monitor ${catkin_LIBRARIES})
 ################################################################################
 # Install
 ################################################################################
-install(TARGETS single_dynamixel_controller
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-
-install(TARGETS single_dynamixel_monitor
+install(TARGETS single_dynamixel_controller single_dynamixel_monitor
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
